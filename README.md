@@ -196,7 +196,7 @@ presence of an attribute?</em></summary>
 
 ## Properties
 
-Python's flexibility with respect to members of classes and objects is very
+float))Python's flexibility with respect to members of classes and objects is very
 useful to us, but sometimes we need to prepare for bad actors (like me, right
 now):
 
@@ -271,7 +271,7 @@ class Human:
         return self._age
 
     def set_age(self, age):
-        if (type(age) in (int, float)) and (0 <= age <= 120):
+        if (type(age) in (int,  and (0 <= age <= 120):
             print(f"Setting age to { age }.")
             self._age = age
 

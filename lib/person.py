@@ -16,4 +16,34 @@ APPROVED_JOBS = [
 ]
 
 class Person:
-    pass
+    def __init__(self, name="", job=""):
+        self.name = name
+        self.job = job
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        if isinstance(value, str) and 1 <= len(value) <= 25:
+            self._name = value.title()
+        else:
+            print("Name must be a string between 1 and 25 characters.")
+            self._name = ""
+
+    @property
+    def job(self):
+        return self._job
+
+    @job.setter
+    def job(self, value):
+        if value.capitalize() in APPROVED_JOBS:
+            self._job = value.capitalize()
+        else:
+            print("Job must be in the list of approved jobs.")
+            self._job = ""
+
+    @name.deleter
+    def name(self):
+        del self._name
